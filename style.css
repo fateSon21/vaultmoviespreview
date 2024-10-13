@@ -1,0 +1,4340 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+body{
+    background: #00001a;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+:root{
+    --blue1: #040492;
+    --blue2: #3d3de4;
+    --black1: #2e2e2e;
+}
+
+a{
+    color: #000000;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1500;
+    width: 100%;
+    top: 0;
+}
+
+.top-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 100%;
+}
+
+.top-bar a{
+    color: #fff;
+}
+
+.links{
+    width: 100%;
+}
+
+.links > ul{
+    background: #000000;
+    width: 100%;
+}
+
+.links > ul > li:first-child ul{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    transform: scale(0.8);
+}
+
+.links > ul > li:first-child ul li:not(:first-child){
+    margin-left: -19px;
+}
+
+.links > ul > li:first-child ul li:nth-child(4) img{
+    height: 1.8em;
+    animation: rotate 10s linear infinite;
+}
+
+.links > ul > li:first-child ul li:nth-child(2) img{
+    height: 2.3em;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.links > ul > li:first-child a img{
+    height: 2em;
+}
+
+.links > ul > li:first-child ul li:first-child img{
+    height: 1.7em;
+}
+
+.links > ul > li .first_sub_link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    cursor: pointer;
+}
+
+.links > ul > li .first_sub_link > li{
+    position: relative;
+    padding: .1em .6em;
+    background: #0f0f0f;
+    border: 1px solid #01016d;
+}
+
+.links > ul > li .first_sub_link .home_link,
+.links > ul > li .first_sub_link .video_link,
+.links > ul > li .first_sub_link li:last-child .tags_link{
+    display: flex;
+    align-items: center;
+    gap: .3em;
+}
+
+.links ul svg{
+    height: 1em;
+}
+
+.links > ul > li .series_inner_link,
+.links > ul > li .inner_link,
+.links > ul > li .tags_inner_link{
+    text-align: center;
+}
+
+.links > ul > li .sub_link li{
+    padding: .7em;
+}
+
+.links > ul > li .sub_link,
+.links > ul > li .inner_link,
+.links > ul > li .series_inner_link,
+.links > ul > li .tags_inner_link,
+.links > ul > li .hamburger_menu,
+.links > ul > li .close_svg{
+    display: none;
+}
+
+.links > ul > li .tags_inner_link li:last-child,
+.links > ul > li .series_inner_link li:last-child,
+.links > ul > li .inner_link li:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links > ul > li .tags_inner_link li:last-child a,
+.links > ul > li .series_inner_link li:last-child a,
+.links > ul > li .inner_link li:last-child a{
+    display: flex;
+    align-items: center;
+    gap: .7em;
+}
+
+.links > ul > li .sub_link > li,
+.links > ul > li .sub_link li .inner_link li:not(:first-child),
+.links > ul > li .series_inner_link li:not(:first-child),
+.links > ul > li .tags_inner_link li:not(:first-child){
+    border-top: 1px solid #1f1f1f;
+}
+
+.links > ul > li .first_sub_link li .video_link:hover,
+.links > ul > li .first_sub_link li .video_link:active,
+.links > ul > li .first_sub_link li .sub_link .movie_link:hover,
+.links > ul > li .first_sub_link li .sub_link .series_link:hover,
+.links > ul > li .first_sub_link li .tags_link:hover,
+.links > ul > li .first_sub_link li .tags_inner_link li:hover a,
+.links > ul > li .sub_link li:hover .movie_link,
+.links > ul > li .sub_link li:hover .series_link,
+.links > ul > li .series_inner_link li:hover a,
+.links > ul > li .inner_link li:hover a{
+    color: #f5d106;
+}
+
+.links > ul > li .first_sub_link li a .home_link:hover,
+.links > ul > li .first_sub_link li a .home_link:active,
+.links > ul > li .sub_link li .inner_link li a:active,
+.links > ul > li .tags_inner_link li a:active,
+.links > ul > li .first_sub_link li .tags_link:active,
+.links > ul > li .tags_inner_link li:last-child a:active,
+.links > ul > li .first_sub_link li .sub_link .movie_link:active,
+.links > ul > li .first_sub_link li .sub_link .series_link:active{
+    color: #0000ff;
+}
+
+.links > ul > li .tags_inner_link li:last-child a{
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.links > ul > li .tags_inner_link li:last-child a svg{
+    height: 0.9em;
+}
+
+.links > ul > li .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+}
+
+.links > ul > li .home_link svg{
+    height: 0.9em;
+}
+
+.links > ul > li .video_link .left svg{
+    height: 1.2em;
+}
+
+.links > ul > li .video_link .left{
+    gap: .2em;
+}
+
+.links > ul .movie_link .mov_svg,
+.links > ul .series_inner_link .ser_svg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links > ul .movie_link .mov_svg svg,
+.links > ul .series_link .ser_svg svg{
+    height: 1.3em;
+}
+
+.links > ul > li .first_sub_link li .sub_link li:nth-child(2) ul li:last-child a svg,
+.links > ul > li .first_sub_link li .sub_link li:first-child ul li:last-child a svg{
+    color: #0000ff;
+}
+
+main{
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1em;
+}
+
+.main-contents{
+    width: 95%;
+    height: 100%;
+    padding-top: 2em;
+    position: relative;
+}
+
+.latest{
+    background: var(--blue1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .4em;
+    gap: .5em;
+    user-select: none;
+    color: #ffffff;
+    width: 60%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 10px;
+}
+
+.back-to-top{
+    position: fixed;
+    z-index: 1000;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #000000;
+    background: #ffffffa6;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    cursor: pointer;
+}
+
+.back-to-top a:hover{
+    transform: scale(1.1);
+}
+
+.back-to-top svg{
+    height: 1.3em;
+}
+
+/* HISTORY BUTTONS */
+.history-buttons{
+    position: fixed;
+    top: 15%;
+    left: 0;
+    z-index: 400;
+    cursor: pointer;
+}
+
+.history-buttons ul{
+    display: block;
+    background: #00000098;
+    width: 50px;
+    padding: .5em;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.history-buttons ul li:first-child{
+    margin-bottom: 15px;
+}
+
+.history-buttons ul li{
+    height: 30px;
+    width: 30px;
+    border: 1px solid #0000ff;
+    background: #000000a6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-buttons svg{
+    color: #fff;
+}
+
+
+.search_items{
+    text-align: center;
+    margin-top: 5em;
+}
+
+.search_items input{
+    width: 40%;
+    height: 40px;
+    padding: 0 .5em;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+.search_items #btn{
+    width: 70px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background: #040492;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search_items input:focus{
+    border: 1px solid #0000ff;
+    border-radius: 7px;
+    outline: none;
+}
+
+.welcome-message{
+    background: #ffff0098;
+    width: 60%;
+    height: 200px;
+    margin-top: 7em;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    color: #000000;
+    padding: .5em;
+    border-radius: 10px;
+}
+
+.trending-movies{
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.trending-movies-grid-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-bottom: .5em;
+    background: #000000;
+    overflow: hidden;
+}
+
+@keyframes slider {
+    from{
+        transform: translate(0);
+    }
+
+    to{
+        transform: translate(-100%);
+    }
+}
+
+.trending-movies-grid-section:hover ul{
+   animation-play-state: paused;
+}
+
+.trending-movies-grid-section ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    padding: 1em;
+    position: relative;
+    gap: .5em;
+    animation: slider 20s linear infinite;
+}
+
+.trending-movies-grid-section ul li{
+    height: 350px;
+    width: 180px;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    position: relative;
+}
+
+.trending-movies-grid-section ul li a{
+    color: #fff;
+}
+
+.trending-movies-grid-section ul li a:active{
+    color: #0000ff;
+}
+
+.trending-movies-grid-section ul li:hover{
+    transform: scale(1.04);
+    background: var(--black1);
+}
+
+.trending-movies-grid-section ul li:first-child .movie-photo{
+    background: url(Twisters.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.trending-movies-grid-section ul li:nth-child(2) .movie-photo{
+    background: url(The_Beast_Within.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.trending-movies-grid-section ul li:nth-child(3) .movie-photo{
+    background: url(D&W.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.trending-movies-grid-section ul li:nth-child(4) .movie-photo{
+    background: url(The_Watchmen.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.trending-movies-grid-section ul li:nth-child(5) .movie-photo{
+    background: url(Fly_Me_To_The_Moon_Movie_Poster.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.trending-movies-grid-section ul li:nth-child(6) .movie-photo{
+    background: url(You_Are_The\ _One.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.trending-movies-grid-section ul li:nth-child(7) .movie-photo{
+    background: url(TMNT.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.trending-movies-grid-section ul li:nth-child(8) .movie-photo{
+    background: url(Perfect_Family_poster.png) center no-repeat;
+    background-size: cover;
+}
+
+.trending-movies-grid-section ul li:nth-child(9) .movie-photo{
+    background: url(Time_Bandits.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.trending-movies-grid-section ul li:last-child .movie-photo{
+    background: url(The_Elusive_Samurai.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.movie-photo{
+    background: #ffffff;
+    height: 80%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.movie-details{
+    position: relative;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+}
+
+.movie-name{
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-top: -10px;
+    line-height: 1.2;
+    padding: 0 .5em;
+}
+
+.videos{
+    display: block;
+    margin-bottom: 3em;
+}
+
+.movies, .series{
+    width: 100%;
+}
+
+.movies-grid-section,
+.series-grid-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: .5em;
+}
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: scale(0.5) translate(-150px);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1) translate(0px);
+    }
+}
+
+.movies-grid-section ul,
+.series-grid-section ul{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    position: relative;
+    gap: .5em;
+    padding-top: .4em;
+    padding-bottom: .4em;
+}
+
+.movies-grid-section ul li,
+.series-grid-section ul li{
+    height: 350px;
+    width: 170px;
+    padding-bottom: .8em;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    position: relative;
+    animation: animate linear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+.movies-grid-section ul li,
+.series-grid-section ul li,
+.related-movies-grid-section ul li{
+    box-shadow: 1px 1px 8px #000000;
+}
+
+.movies-grid-section ul li:hover,
+.series-grid-section ul li:hover,
+.movies-grid-section ul li:active,
+.series-grid-section ul li:active,
+.related-movies-grid-section ul li:active,
+.related-movies-grid-section ul li:hover{
+    transform: scale(1.04);
+    background: #000038;
+}
+
+.movies-grid-section ul li a,
+.series-grid-section ul li a{
+    color: #fff;
+}
+
+.movies-grid-section ul li a:active,
+.series-grid-section ul li a:active{
+    color: #0000ff;
+}
+
+.movies > a, .series > a{
+    background: var(--blue1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .4em;
+    user-select: none;
+    color: #ffffff;
+    width: 60%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 6px;
+    border-radius: 10px;
+}
+
+.movies > a:hover, .series > a:hover{
+    background: #1b1b1b;
+}
+
+/*MOVIE NAMES THAT ARE LONG *ADJUSTMENTS**/
+
+.movies-grid-section ul li .movie-name,
+.series-grid-section ul li .movie-name,
+.trending-movies-grid-section ul li .movie-name{
+    padding-top: 1.5em;
+}
+/**ADJUSTMENTS* ENDS HERE*/
+
+/* ADVERTISEMENT */
+.advertisement {
+    width: 60%;
+    height: 300px;
+    background: #000000;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.advertisement p{
+    background: #00005e;
+    width: 100%;
+    color: #fff;
+}
+
+/* ADVERTISEMENT ENDS HERE */
+
+.movies-grid-section ul li:first-child .movie-photo{
+    background: url(How\ _to_Train_Your_Dragon_2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(2) .movie-photo{
+    background: url(Love_In_Wolf_Creek.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(3) .movie-photo{
+    background: url(D&W.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(4) .movie-photo{
+    background: url(10_Minutes_Gone.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(5) .movie-photo{
+    background: url(Aquaman_and_the_Lost_Kingdom.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(6) .movie-photo{
+    background: url(Army_of_the_Dead_poster.png) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(7) .movie-photo{
+    background: url(Bad_Boys_For_Life.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(8) .movie-photo{
+    background: url(Train_To_Busan.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(9) .movie-photo{
+    background: url(Creed_iii.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(10) .movie-photo{
+    background: url(Robin_and_the_Hoods.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(11) .movie-photo{
+    background: url(Captain_America.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(12) .movie-photo{
+    background: url(Bullet_Train.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(13) .movie-photo{
+    background: url(Decendants.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(14) .movie-photo{
+    background: url(Wish.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(15) .movie-photo{
+    background: url(Die_Hart.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(16) .movie-photo{
+    background: url(Hitman_Agent_47.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(17) .movie-photo{
+    background: url(Eliminators.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(18) .movie-photo{
+    background: url(Falsely_Accused.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(19) .movie-photo{
+    background: url(Tax_Collector.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(20) .movie-photo{
+    background: url(Despicable_Me_4.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(21) .movie-photo{
+    background: url(Come_Out_Fightinh.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(22) .movie-photo{
+    background: url(Black_Widow.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(23) .movie-photo{
+    background: url(Dune.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(24) .movie-photo{
+    background: url(Orion_and_The_Dark.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(25) .movie-photo{
+    background: url(Snow_White_and_the_7_Samurai.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(26) .movie-photo{
+    background: url(Madame_web.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(27) .movie-photo{
+    background: url(GhostBusters_Frozen_Empire.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(28) .movie-photo{
+    background: url(Batman_and_Superman_Battle_of_the_Supersons.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:nth-child(29) .movie-photo{
+    background: url(Inside_Out.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.movies-grid-section ul li:last-child .movie-photo{
+    background: url(FastX.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:first-child .movie-photo{
+    background: url(Time_Bandits.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(2) .movie-photo{
+    background: url(KunFu.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(3) .movie-photo{
+    background: url(Avatar.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(4) .movie-photo{
+    background: url(My_Adventures_with_Superman.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(5) .movie-photo{
+    background: url(Superman_and_Lois.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(6) .movie-photo{
+    background: url(Loki.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(7) .movie-photo{
+    background: url(Vampire_Daires.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(8) .movie-photo{
+    background: url(Moon_Knight.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(9) .movie-photo{
+    background: url(Supacell.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(10) .movie-photo{
+    background: url(images/phillipine-movies/Are_You_Sure.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(11) .movie-photo{
+    background: url(Bel_Air.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(12) .movie-photo{
+    background: url(The_Family_Business.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(13) .movie-photo{
+    background: url(House_of_the_Dragon.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(14) .movie-photo{
+    background: url(images/Are_you_the_One.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(15) .movie-photo{
+    background: url(Perfect_Family_poster.png) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(16) .movie-photo{
+    background: url(Kengan.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(17) .movie-photo{
+    background: url(teen-love.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(18) .movie-photo{
+    background: url(The_Twelve.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(19) .movie-photo{
+    background: url(images/Sunny.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(20) .movie-photo{
+    background: url(All_American.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(21) .movie-photo{
+    background: url(Evil.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(22) .movie-photo{
+    background: url(images/Suji_&_Uri.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(23) .movie-photo{
+    background: url(TMNT.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(24) .movie-photo{
+    background: url(images/phillipine-movies/As_Husband_and_Wife.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(25) .movie-photo{
+    background: url(You_Are_The\ _One.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(26) .movie-photo{
+    background: url(High_School_Magical.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(27) .movie-photo{
+    background: url(Percy_jackson.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(28) .movie-photo{
+    background: url(Teen_Wolf.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:nth-child(29) .movie-photo{
+    background: url(school-trip.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.series-grid-section ul li:last-child .movie-photo{
+    background: url(final-year1.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.more-movies,
+.more-series{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.more-movies a,
+.more-series a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    color: var(--blue2);
+    padding: .5em;
+    font-size: 0.9em;
+}
+
+.more-movies a:hover,
+.more-series a:hover,
+.more-movies a:active,
+.more-series a:active{
+    color: #fff;
+    background: #000000;
+    border-radius: 5px;
+}
+
+.more-movies svg,
+.more-series svg{
+    height: 1em;
+}
+
+/* PAGENATION */
+
+.pagenation{
+    width: 100%;
+    padding: 1em;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.pagenation ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .pagenation ul li:nth-child(6),
+.pagenation ul li:nth-child(7),
+.pagenation ul li:nth-child(8),
+.pagenation ul li:nth-child(9),
+.pagenation ul li:nth-child(10),
+.pagenation ul li:nth-child(11),
+.pagenation ul li:nth-child(12),
+.pagenation ul li:nth-child(13){
+    display: none;
+} */
+
+.pagenation ul li a{
+    color: #fff;
+}
+
+#pagenation-animation-page1 ul li:nth-child(5),
+#pagenation-animation-page2 ul li:nth-child(5),
+#pagenation-animation-page3 ul li:nth-child(6),
+#pagenation-animation-page4 ul li:nth-child(7),
+#pagenation-animation-page5 ul li:nth-child(8),
+#pagenation-animation-page6 ul li:nth-child(9),
+#pagenation-animation-page7 ul li:nth-child(10),
+#pagenation-animation-page8 ul li:nth-child(11),
+#pagenation-animation-page9 ul li:nth-child(12),
+#pagenation-animation-page10 ul li:nth-child(13),
+#pagenation-animation-page11 ul li:nth-child(14),
+#pagenation-animation-page12 ul li:nth-child(16),
+#pagenation-animation-page12 ul li:nth-child(12),
+#pagenation-animation-page13 ul li:nth-child(14),
+#pagenation-animation-page13 ul li:nth-child(18),
+#pagenation-animation-page13 ul li:nth-child(12),
+#pagenation-animation-page14 ul li:nth-child(14),
+#pagenation-animation-page14 ul li:nth-child(19),
+#pagenation-animation-page14 ul li:nth-child(11),
+#pagenation-animation-page15 ul li:nth-child(11),
+#pagenation-animation-page15 ul li:nth-child(14),
+#pagenation-animation-page15 ul li:nth-child(19),
+#pagenation-animation-page16 ul li:nth-child(11),
+#pagenation-animation-page16 ul li:nth-child(14),
+#pagenation-animation-page16 ul li:nth-child(19),
+#pagenation-animation-page17 ul li:nth-child(11),
+#pagenation-animation-page17 ul li:nth-child(14),
+#pagenation-animation-page17 ul li:nth-child(19){
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.pagenation ul li a{
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pagenation-animation-page1 ul li:not(:first-child, :last-child, :nth-child(5)),
+#pagenation-animation-page2 ul li:not(:first-child, :last-child, :nth-child(5)),
+#pagenation-animation-page3 ul li:not(:first-child, :last-child, :nth-child(6)),
+#pagenation-animation-page4 ul li:not(:first-child, :last-child, :nth-child(7)),
+#pagenation-animation-page5 ul li:not(:first-child, :last-child, :nth-child(8)),
+#pagenation-animation-page6 ul li:not(:first-child, :last-child, :nth-child(9)),
+#pagenation-animation-page7 ul li:not(:first-child, :last-child, :nth-child(10)),
+#pagenation-animation-page8 ul li:not(:first-child, :last-child, :nth-child(11)),
+#pagenation-animation-page9 ul li:not(:first-child, :last-child, :nth-child(12)),
+#pagenation-animation-page10 ul li:not(:first-child, :last-child, :nth-child(13)),
+#pagenation-animation-page11 ul li:not(:first-child, :last-child, :nth-child(14)),
+#pagenation-animation-page12 ul li:not(:first-child, :last-child, :nth-child(12), :nth-child(16)),
+#pagenation-animation-page13 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(18)),
+#pagenation-animation-page14 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)),
+#pagenation-animation-page15 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)),
+#pagenation-animation-page16 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)),
+#pagenation-animation-page17 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)){
+    background: #00004d;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pagenation-animation-page1 ul li:not(:first-child, :last-child, :nth-child(5)):hover,
+#pagenation-animation-page2 ul li:not(:first-child, :last-child, :nth-child(5)):active,
+#pagenation-animation-page1 ul li:not(:first-child, :last-child, :nth-child(5)):hover,
+#pagenation-animation-page2 ul li:not(:first-child, :last-child, :nth-child(5)):active,
+#pagenation-animation-page3 ul li:not(:first-child, :last-child, :nth-child(6)):hover,
+#pagenation-animation-page3 ul li:not(:first-child, :last-child, :nth-child(6)):active,
+#pagenation-animation-page4 ul li:not(:first-child, :last-child, :nth-child(7)):hover,
+#pagenation-animation-page4 ul li:not(:first-child, :last-child, :nth-child(7)):active,
+#pagenation-animation-page5 ul li:not(:first-child, :last-child, :nth-child(8)):hover,
+#pagenation-animation-page5 ul li:not(:first-child, :last-child, :nth-child(8)):active,
+#pagenation-animation-page6 ul li:not(:first-child, :last-child, :nth-child(9)):hover,
+#pagenation-animation-page6 ul li:not(:first-child, :last-child, :nth-child(9)):active,
+#pagenation-animation-page7 ul li:not(:first-child, :last-child, :nth-child(10)):hover,
+#pagenation-animation-page7 ul li:not(:first-child, :last-child, :nth-child(10)):active,
+#pagenation-animation-page8 ul li:not(:first-child, :last-child, :nth-child(11)):hover,
+#pagenation-animation-page8 ul li:not(:first-child, :last-child, :nth-child(11)):active,
+#pagenation-animation-page9 ul li:not(:first-child, :last-child, :nth-child(12)):hover,
+#pagenation-animation-page9 ul li:not(:first-child, :last-child, :nth-child(12)):active,
+#pagenation-animation-page10 ul li:not(:first-child, :last-child, :nth-child(13)):hover,
+#pagenation-animation-page10 ul li:not(:first-child, :last-child, :nth-child(13)):active,
+#pagenation-animation-page11 ul li:not(:first-child, :last-child, :nth-child(14)):hover,
+#pagenation-animation-page11 ul li:not(:first-child, :last-child, :nth-child(14)):active,
+#pagenation-animation-page12 ul li:not(:first-child, :last-child, :nth-child(12), :nth-child(16)):hover,
+#pagenation-animation-page12 ul li:not(:first-child, :last-child, :nth-child(12), :nth-child(16)):active,
+#pagenation-animation-page13 ul li:not(:first-child, :last-child, :nth-child(12), :nth-child(14), :nth-child(18)):hover,
+#pagenation-animation-page13 ul li:not(:first-child, :last-child, :nth-child(12), :nth-child(14), :nth-child(18)):active,
+#pagenation-animation-page14 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)):hover,
+#pagenation-animation-page14 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)):active,
+#pagenation-animation-page15 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)):hover,
+#pagenation-animation-page15 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)):active,
+#pagenation-animation-page16 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)):hover,
+#pagenation-animation-page16 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)):active,
+#pagenation-animation-page17 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)):hover,
+#pagenation-animation-page17 ul li:not(:first-child, :last-child, :nth-child(11), :nth-child(14), :nth-child(19)):active{
+    background: #1f1f1f;
+    color: #000000;
+    border: 1px solid #ffffff;
+}
+
+.pagenation ul li:first-child a,
+.pagenation ul li:last-child a{
+    padding: .5em;
+    border: 1px solid #0000af;
+    border-radius: 7px;
+    background: #000000;
+}
+
+.pagenation ul li:first-child a:hover,
+.pagenation ul li:last-child a:hover{
+    border: 1px solid #ffffff;
+    background: #1f1f1f;
+}
+
+.pagenation ul li:first-child a:active,
+.pagenation ul li:last-child a:active{
+    background: #1f1f1f;
+    border: 1px solid #ffffff;
+    color: #fff;
+}
+
+/*ANIMATION PAGE*/
+
+#animation_page{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#animation_page span::before,
+#animation_page span::after{
+    content: '';
+    background: #353535;
+    height: 2px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+}
+
+#animation_page span::before{
+    left: -90%;
+}
+
+#animation_page span::after{
+    right: -90%;
+}
+
+
+#animation_page span{
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    user-select: none;
+    position: relative;
+}
+
+.animation ul li:first-child .movie-photo{
+    background: url(inside-out2.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(2) .movie-photo{
+    background: url(Despicable_Me_4.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(3) .movie-photo{
+    background: url(kunfu-panda4.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(4) .movie-photo{
+    background: url(transformers-one.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(5) .movie-photo{
+    background: url(the-wild-robot.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(6) .movie-photo{
+    background: url(saving-bikini-bottom.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(7) .movie-photo{
+    background: url(Ultraman_Rising.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(8) .movie-photo{
+    background: url(dragon-keeper.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(9) .movie-photo{
+    background: url(Wish.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(10) .movie-photo{
+    background: url(the-garfield-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(11) .movie-photo{
+    background: url(paw-patrol-the-mighty-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(12) .movie-photo{
+    background: url(spiderman-across-the-spiderverse.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(13) .movie-photo{
+    background: url(elemental.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(14) .movie-photo{
+    background: url(puss-in-boots-the-last-wish.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(15) .movie-photo{
+    background: url(the-super-mario-bros-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(16) .movie-photo{
+    background: url(teenage-mutant-ninja-turtles-mutant-mayhem.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(17) .movie-photo{
+    background: url(strange-world.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(18) .movie-photo{
+    background: url(the-magicians-elephant.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(19) .movie-photo{
+    background: url(trolls-band-together.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(20) .movie-photo{
+    background: url(nimona.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(21) .movie-photo{
+    background: url(Ruby_Gillman_Teenage_Kraken.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(22) .movie-photo{
+    background: url(the-amazing-maurice.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(23) .movie-photo{
+    background: url(my-fathers-dragon.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(25) .movie-photo{
+    background: url(the-monkey-king.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(26) .movie-photo{
+    background: url(The_Bad_Guys.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(27) .movie-photo{
+    background: url(scrooge-a-christmas-carol.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:nth-child(29) .movie-photo{
+    background: url(if.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation ul li:last-child .movie-photo{
+    background: url(Mummies.jpg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 2 */
+.animation2 ul li:first-child .movie-photo{
+    background: url(suzume.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(2) .movie-photo{
+    background: url(chicken-run.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(3) .movie-photo{
+    background: url(migration.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(4) .movie-photo{
+    background: url(turning-red.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(5) .movie-photo{
+    background: url(Luck.png) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(6) .movie-photo{
+    background: url(hotel-transylvania4.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(7) .movie-photo{
+    background: url(lightyear.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(8) .movie-photo{
+    background: url(trolls.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(9) .movie-photo{
+    background: url(onward.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(10) .movie-photo{
+    background: url(soul.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(11) .movie-photo{
+    background: url(luca.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(12) .movie-photo{
+    background: url(zootopia.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(13) .movie-photo{
+    background: url(sing2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(14) .movie-photo{
+    background: url(spiderman-into-the-spiderverse.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(15) .movie-photo{
+    background: url(ainbo.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(16) .movie-photo{
+    background: url(encanto.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(17) .movie-photo{
+    background: url(hotel-transylvania3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(18) .movie-photo{
+    background: url(merry-little-batman.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(19) .movie-photo{
+    background: url(troll-hunters-rise-of-the-titans.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(20) .movie-photo{
+    background: url(the-adams-family.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(21) .movie-photo{
+    background: url(hotel-transylvania.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(22) .movie-photo{
+    background: url(justice-league-warworld.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(23) .movie-photo{
+    background: url(missing-link.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(24) .movie-photo{
+    background: url(earwing-and-the-witch.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(25) .movie-photo{
+    background: url(big-city-greens-the-movie-spacecation.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(26) .movie-photo{
+    background: url(raya-and-the-last-dragon.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(27) .movie-photo{
+    background: url(rumble.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(28) .movie-photo{
+    background: url(invincible-atom-eve.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:nth-child(29) .movie-photo{
+    background: url(How\ _to_Train_Your_Dragon_2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation2 ul li:last-child .movie-photo{
+    background: url(batman-soul-of-the-dragon.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 3 */
+.animation3 ul li:first-child .movie-photo{
+    background: url(paw-patrol-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(2) .movie-photo{
+    background: url(kunfu-panda3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(3) .movie-photo{
+    background: url(justice-league-dark-apokolips-war.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(4) .movie-photo{
+    background: url(trolls-holiday-in-harmony.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(5) .movie-photo{
+    background: url(wish-dragon.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(6) .movie-photo{
+    background: url(spirit-untamed.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(7) .movie-photo{
+    background: url(the-tigers-apprentice.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(8) .movie-photo{
+    background: url(rock-dog3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(9) .movie-photo{
+    background: url(the-death-of-superman.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(10) .movie-photo{
+    background: url(hotel-transylvania2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(11) .movie-photo{
+    background: url(vivo.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(12) .movie-photo{
+    background: url(The_Watchmen.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(13) .movie-photo{
+    background: url(gulliver-returns.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(14) .movie-photo{
+    background: url(demon-slayer-mugen-train.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(15) .movie-photo{
+    background: url(the-bobs-burgers-movie.png) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(16) .movie-photo{
+    background: url(mortal-kombat-legends-cage-match.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(17) .movie-photo{
+    background: url(tom&jerry.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(18) .movie-photo{
+    background: url(minions-rise-of-gru.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(19) .movie-photo{
+    background: url(EntergalacticSeries.png) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(20) .movie-photo{
+    background: url(back-to-the-outback.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(21) .movie-photo{
+    background: url(diary-of-a-wimpy-kid-rodrick-rules.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(22) .movie-photo{
+    background: url(mavka-the-forest-song.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(23) .movie-photo{
+    background: url(Wendell_&_Wild.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(24) .movie-photo{
+    background: url(the-sea-beast.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(25) .movie-photo{
+    background: url(space-jam-a-new-legacy.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(26) .movie-photo{
+    background: url(the-boss-baby2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(27) .movie-photo{
+    background: url(the-adams-family2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(28) .movie-photo{
+    background: url(ron-gone-wrong.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:nth-child(29) .movie-photo{
+    background: url(paws-of-fury.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation3 ul li:last-child .movie-photo{
+    background: url(the-stolen-princess.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 4 */
+.animation4 ul li:first-child .movie-photo{
+    background: url(rock-dog2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(2) .movie-photo{
+    background: url(secret-magic-control-agency.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(3) .movie-photo{
+    background: url(mortal-kombat-legends-scorpions-revenge.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(4) .movie-photo{
+    background: url(the-mitchells-vs-the-machines.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(5) .movie-photo{
+    background: url(megamind.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(6) .movie-photo{
+    background: url(chip-n-dale.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(7) .movie-photo{
+    background: url(how-to-train-your-dragon3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(8) .movie-photo{
+    background: url(justice-league-war.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(9) .movie-photo{
+    background: url(kunfu-panda2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(10) .movie-photo{
+    background: url(kubo-and-the-two-strings.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(11) .movie-photo{
+    background: url(the-secret-life-of-pets2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(12) .movie-photo{
+    background: url(reign-of-the-supermen.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(13) .movie-photo{
+    background: url(night-at-the-museum.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(14) .movie-photo{
+    background: url(mortal-kombat-legends-snow-blind.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(15) .movie-photo{
+    background: url(secret-life-of-pets.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(16) .movie-photo{
+    background: url(superman-man-of-tomorrow.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(17) .movie-photo{
+    background: url(the-croods-a-new-age.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(18) .movie-photo{
+    background: url(the-ice-age-buck-wild.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(19) .movie-photo{
+    background: url(superpets.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(20) .movie-photo{
+    background: url(kunfu-panda.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(21) .movie-photo{
+    background: url(justice-society-world-war2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(22) .movie-photo{
+    background: url(the-box-trolls.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(23) .movie-photo{
+    background: url(the-day-the-earth-blew-up.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(24) .movie-photo{
+    background: url(the_angry_birds_movie2.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(25) .movie-photo{
+    background: url(TTGO-DCSHG-MITM.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(26) .movie-photo{
+    background: url(the-loud-house-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(27) .movie-photo{
+    background: url(extinct.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(28) .movie-photo{
+    background: url(my-little-pony-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:nth-child(29) .movie-photo{
+    background: url(the-lego-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation4 ul li:last-child .movie-photo{
+    background: url(trolls-world-tour.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 5 */
+.animation5 ul li:first-child .movie-photo{
+    background: url(lyle-lyle-crocodile.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(2) .movie-photo{
+    background: url(over-the-moon.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(3) .movie-photo{
+    background: url(scoob!.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(4) .movie-photo{
+    background: url(the_willoughbys.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(5) .movie-photo{
+    background: url(the-spongebob-movie-sponge-on-the-run.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(6) .movie-photo{
+    background: url(toy-story4.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(7) .movie-photo{
+    background: url(frozen2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(8) .movie-photo{
+    background: url(how-to-train-your-dragon.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(9) .movie-photo{
+    background: url(abominable.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(10) .movie-photo{
+    background: url(ugly-dolls.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(11) .movie-photo{
+    background: url(the-angry-birds-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(12) .movie-photo{
+    background: url(wonder-park.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(13) .movie-photo{
+    background: url(spies-in-disguise.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(14) .movie-photo{
+    background: url(playmobil-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(15) .movie-photo{
+    background: url(teen-titans-go-to-the-movies.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(16) .movie-photo{
+    background: url(the-incredibles2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(17) .movie-photo{
+    background: url(ralph-breaks-the-internet.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(18) .movie-photo{
+    background: url(small-foot.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(19) .movie-photo{
+    background: url(coco.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(20) .movie-photo{
+    background: url(the-lego-batman-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(21) .movie-photo{
+    background: url(my-little-pony-a-new-generation.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(22) .movie-photo{
+    background: url(trolls-holiday.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(23) .movie-photo{
+    background: url(epic.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(24) .movie-photo{
+    background: url(dragon-rider.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(25) .movie-photo{
+    background: url(teen-titans-go-vs-teen-titans.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(26) .movie-photo{
+    background: url(green-lantern-beware-my-power.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(27) .movie-photo{
+    background: url(legion-of-super-heroes.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(28) .movie-photo{
+    background: url(teen-titans-go-see-space-jam.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:nth-child(29) .movie-photo{
+    background: url(the-good-dinosaur.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation5 ul li:last-child .movie-photo{
+    background: url(trolls-world-tour.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 6 */
+.animation6 ul li:first-child .movie-photo{
+    background: url(the-emoji-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(2) .movie-photo{
+    background: url(despicable-me3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(3) .movie-photo{
+    background: url(the-boss-baby.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(4) .movie-photo{
+    background: url(moana.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(5) .movie-photo{
+    background: url(frozen.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(6) .movie-photo{
+    background: url(sonic-the-hedgehog2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(7) .movie-photo{
+    background: url(spycies.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(8) .movie-photo{
+    background: url(ratatouille.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(9) .movie-photo{
+    background: url(toy-story3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(10) .movie-photo{
+    background: url(the-grinch.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(11) .movie-photo{
+    background: url(nezha.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(12) .movie-photo{
+    background: url(smurfes-the-lost-village.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(13) .movie-photo{
+    background: url(the-nut-job2-nutty-by-nature.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(14) .movie-photo{
+    background: url(barbie-starlight-adventure.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(15) .movie-photo{
+    background: url(barbie-big-city-big-dreams.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(16) .movie-photo{
+    background: url(batman-the-long-halloween-part2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(17) .movie-photo{
+    background: url(teen-titans-the-judas-contract.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(18) .movie-photo{
+    background: url(ice-age-collision-course.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(19) .movie-photo{
+    background: url(deathstroke.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(20) .movie-photo{
+    background: url(happy-halloween-scooby-doo.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(21) .movie-photo{
+    background: url(captain-underpants.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(22) .movie-photo{
+    background: url(sing.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(23) .movie-photo{
+    background: url(batman-vs-the-tmnt.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(24) .movie-photo{
+    background: url(barbie-the-pearl-princess.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(25) .movie-photo{
+    background: url(lego-dc-super-hero-girls-super-villain-high.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(26) .movie-photo{
+    background: url(justice-league-gods-and-monsters.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(27) .movie-photo{
+    background: url(the-casagrandes-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(28) .movie-photo{
+    background: url(ferdinard.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:nth-child(29) .movie-photo{
+    background: url(finding-dory.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation6 ul li:last-child .movie-photo{
+    background: url(white-snake.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 7 */
+.animation7 ul li:first-child .movie-photo{
+    background: url(the-son-of-bigfoot.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(2) .movie-photo{
+    background: url(the-nut-job.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(3) .movie-photo{
+    background: url(despicable-me2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(4) .movie-photo{
+    background: url(the-incredibles.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(5) .movie-photo{
+    background: url(sonic-the-hedgehog.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(6) .movie-photo{
+    background: url(toystory2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(7) .movie-photo{
+    background: url(miraculous-shanghai-legend-of-ladydragon.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(8) .movie-photo{
+    background: url(the-little-vampire.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(9) .movie-photo{
+    background: url(toy-story.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(10) .movie-photo{
+    background: url(despicable-me.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(11) .movie-photo{
+    background: url(gintama-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(12) .movie-photo{
+    background: url(drifting-home.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(13) .movie-photo{
+    background: url(the-lego-movie2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(14) .movie-photo{
+    background: url(the-seven-deadly-sins-grudge-of-edinburgh-part2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(15) .movie-photo{
+    background: url(barbie-video-game-hero.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(16) .movie-photo{
+    background: url(batman-the-long-halloween-part1.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(17) .movie-photo{
+    background: url(the-first-slam-dunk.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(18) .movie-photo{
+    background: url(justice-league-the-flashpoint-paradox.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(19) .movie-photo{
+    background: url(batman-the-doom-that-came-to-gotham.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(20) .movie-photo{
+    background: url(barbie-princess-charm-school.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(21) .movie-photo{
+    background: url(the-smurfs2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(22) .movie-photo{
+    background: url(batman-death-in-the-family.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(23) .movie-photo{
+    background: url(ladybug-and-catnoir-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(24) .movie-photo{
+    background: url(batman-bad-blood.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(25) .movie-photo{
+    background: url(ice-age-continental-drift.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(26) .movie-photo{
+    background: url(green-snake.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(27) .movie-photo{
+    background: url(minions.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(28) .movie-photo{
+    background: url(megamind-vs-the-doom-syndicate.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:nth-child(29) .movie-photo{
+    background: url(son-of-batman.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation7 ul li:last-child .movie-photo{
+    background: url(batman-ninja.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 8 */
+.animation8 ul li:first-child .movie-photo{
+    background: url(penguins-of-madagascar-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(2) .movie-photo{
+    background: url(blues-big-city-adventure.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(3) .movie-photo{
+    background: url(big-hero6.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(4) .movie-photo{
+    background: url(the-smurfs.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(5) .movie-photo{
+    background: url(the-croods.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(6) .movie-photo{
+    background: url(minions-and-more1.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(7) .movie-photo{
+    background: url(ice-age-dawn-of-the-dinosaurs.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(8) .movie-photo{
+    background: url(barbie-spy-squad.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(9) .movie-photo{
+    background: url(justice-league-vs-teen-titans.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(10) .movie-photo{
+    background: url(my-little-pony-equestria-girls.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(11) .movie-photo{
+    background: url(batman-the-killing-joke.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(12) .movie-photo{
+    background: url(barbie-skipper-and-the-big-babsitting-adventure.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(13) .movie-photo{
+    background: url(justice-league-crisis-on-two-earths.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(14) .movie-photo{
+    background: url(jiang-ziya.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(15) .movie-photo{
+    background: url(chickenhare-and-the-hamster-of-darkness.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(16) .movie-photo{
+    background: url(pokemon-the-arceus-chronicle.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(17) .movie-photo{
+    background: url(bigfoot-family.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(18) .movie-photo{
+    background: url(wreck-it-ralph.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(19) .movie-photo{
+    background: url(Thelma_the_Unicorn_poster.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(20) .movie-photo{
+    background: url(monsters-vs-aliens.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(21) .movie-photo{
+    background: url(superman-vs-the-elite.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(22) .movie-photo{
+    background: url(goldbeak.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(23) .movie-photo{
+    background: url(double-tuckerr.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(24) .movie-photo{
+    background: url(monkey-king-reborn.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(25) .movie-photo{
+    background: url(seal-team.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(26) .movie-photo{
+    background: url(puss-in-boots.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(27) .movie-photo{
+    background: url(rally-road-racers.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(28) .movie-photo{
+    background: url(resident-evil-death-island.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:nth-child(29) .movie-photo{
+    background: url(the-venture-bros.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation8 ul li:last-child .movie-photo{
+    background: url(nussa.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 9*/
+.animation9 ul li:first-child .movie-photo{
+    background: url(ternet-ninja2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(2) .movie-photo{
+    background: url(constantine-the-house-of-mystery.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(3) .movie-photo{
+    background: url(the-castaways.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(4) .movie-photo{
+    background: url(barbie-and-the-secret-door.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(5) .movie-photo{
+    background: url(ice-age-the-meltdown.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(6) .movie-photo{
+    background: url(batman-hush.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(7) .movie-photo{
+    background: url(new-gods-yang-jian.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(8) .movie-photo{
+    background: url() center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(9) .movie-photo{
+    background: url(under-the-boardwalk.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(10) .movie-photo{
+    background: url(noah-ark.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(11) .movie-photo{
+    background: url(scooby-doo-and-krypto-too.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(12) .movie-photo{
+    background: url(justice-league-vs-the-fatal-five.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(13) .movie-photo{
+    background: url(batman-under-the-red-hood.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(14) .movie-photo{
+    background: url(monster-family2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(15) .movie-photo{
+    background: url(violet-evergarden.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(16) .movie-photo{
+    background: url(catwoman-haunted.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(17) .movie-photo{
+    background: url(tom&jerry-cowboy-up.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(18) .movie-photo{
+    background: url(ternet-ninja.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(19) .movie-photo{
+    background: url(fire-heart.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(20) .movie-photo{
+    background: url(bonnie-bears-back-to-earth.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(21) .movie-photo{
+    background: url(batman-vs-robin.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(22) .movie-photo{
+    background: url(snoopy-presents-one-of-a-kind-marcie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(23) .movie-photo{
+    background: url(tangled.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(24) .movie-photo{
+    background: url(mortal-kombat-legends-battle-of-the-realms.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(25) .movie-photo{
+    background: url(robin-robin.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(26) .movie-photo{
+    background: url(justice-league-crisis-on-infinite-earths-part3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(27) .movie-photo{
+    background: url(batman-gotham-by-gaslight.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(28) .movie-photo{
+    background: url(new-gods-nezha-reborn.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:nth-child(29) .movie-photo{
+    background: url(barbie-epic-road-trip.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation9 ul li:last-child .movie-photo{
+    background: url(ice-age.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 10*/
+.animation10 ul li:first-child .movie-photo{
+    background: url(barbie-in-the-pink-shoes.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(2) .movie-photo{
+    background: url(justice-league-crisis-on-infinite-earths-part2.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(3) .movie-photo{
+    background: url(big-trip2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(4) .movie-photo{
+    background: url(the-seven-deadly-sins-grudge-of-edinburgh-part1.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(5) .movie-photo{
+    background: url(around-the-world-in-80-days.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(6) .movie-photo{
+    background: url(batman-year-one.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(7) .movie-photo{
+    background: url(superman&batman-apocalpse.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(8) .movie-photo{
+    background: url(injustice.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(9) .movie-photo{
+    background: url(little-vampire.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(10) .movie-photo{
+    background: url(boiboiboy2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(11) .movie-photo{
+    background: url(the-little-mermaid.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(12) .movie-photo{
+    background: url(scooby-doo-meets-courage-the-cowardly-dog.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(13) .movie-photo{
+    background: url(the-big-trip.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(14) .movie-photo{
+    background: url(spacedogs-topical-adventure.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(15) .movie-photo{
+    background: url(barbie-in-a-mermaid-tale.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(16) .movie-photo{
+    background: url(scary-girl.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(17) .movie-photo{
+    background: url(monster-family.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(18) .movie-photo{
+    background: url(ben10-vs-the-universe.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(19) .movie-photo{
+    background: url(diary-of-a-wimpy-kid.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(20) .movie-photo{
+    background: url(bonnie-bears-blast-into-the-past.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(21) .movie-photo{
+    background: url(attack-on-titans-chronicles.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(22) .movie-photo{
+    background: url(justice-league-crisis-on-infinite-earths-part1.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(23) .movie-photo{
+    background: url(next-gen.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(24) .movie-photo{
+    background: url(batman-and-harley-queen.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(25) .movie-photo{
+    background: url(tad-the-lost-explorer-and-the-emerald-tablet.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(26) .movie-photo{
+    background: url(river-dance.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(27) .movie-photo{
+    background: url(maya-and-the-bee3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(28) .movie-photo{
+    background: url(pokemon-secrets-of-the-jungle.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:nth-child(29) .movie-photo{
+    background: url(two-by-two-overboard.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation10 ul li:last-child .movie-photo{
+    background: url(astro-kid.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 11*/
+.animation11 ul li:first-child .movie-photo{
+    background: url(the-jungle-bunch.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(2) .movie-photo{
+    background: url(scooby-doo-return-to-zombie-island.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(3) .movie-photo{
+    background: url(barbie-in-princess-power.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(4) .movie-photo{
+    background: url(over-the-hedge.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(5) .movie-photo{
+    background: url(tom&jerry-snowman-land.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(6) .movie-photo{
+    background: url(evangelion-3.0+1.0.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(7) .movie-photo{
+    background: url(dreambuilders.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(8) .movie-photo{
+    background: url(justice-league-throne-of-atlantis.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(9) .movie-photo{
+    background: url(the-seven-deadly-sins-cursed-by-light.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(10) .movie-photo{
+    background: url(nutcracker-and-the-magic-flute.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(11) .movie-photo{
+    background: url(bright-samurai-soul.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(12) .movie-photo{
+    background: url(trick-or-treat-scooby-doo.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(13) .movie-photo{
+    background: url(daisy-quokka.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(14) .movie-photo{
+    background: url(barbie-dolphin-magic.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(15) .movie-photo{
+    background: url(the-batman-vs-dracula.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(16) .movie-photo{
+    background: url(gintama-the-final.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(17) .movie-photo{
+    background: url(we-bare-bears-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(18) .movie-photo{
+    background: url(batman-beyond-return-of-the-joker.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(19) .movie-photo{
+    background: url(igor.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(20) .movie-photo{
+    background: url(lupin-III-the-first.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(21) .movie-photo{
+    background: url(craig-before-the-creek.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(22) .movie-photo{
+    background: url(harold-and-the-purple-crayon.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(23) .movie-photo{
+    background: url(cats-in-the-museum.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(24) .movie-photo{
+    background: url(combat-wombat.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(25) .movie-photo{
+    background: url(the-witcher-nightmare-of-the-wolf.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(26) .movie-photo{
+    background: url(justice-league-doom.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(27) .movie-photo{
+    background: url(madagascar4.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(28) .movie-photo{
+    background: url(panda-vs-aliens.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:nth-child(29) .movie-photo{
+    background: url(ciao-alberto.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation11 ul li:last-child .movie-photo{
+    background: url(batman-gotham-knight.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 12*/
+.animation12 ul li:first-child .movie-photo{
+    background: url(batman-vs-two-face.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(2) .movie-photo{
+    background: url(the-donkey-king.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(3) .movie-photo{
+    background: url(the-snow-queen-and-the-princess.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(4) .movie-photo{
+    background: url(the-canterville-ghost.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(5) .movie-photo{
+    background: url(shrek4.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(6) .movie-photo{
+    background: url(cranston-academy-monster-zone.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(7) .movie-photo{
+    background: url(killer-bean-forever.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(8) .movie-photo{
+    background: url(dragonball-super-broly.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(9) .movie-photo{
+    background: url(finding-jesus.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(10) .movie-photo{
+    background: url(jungle-beat.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(11) .movie-photo{
+    background: url(scooby-doo-the-sword-and-the-scoob.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(12) .movie-photo{
+    background: url(barbie-and-chelsea-the-lost-birthday.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(13) .movie-photo{
+    background: url(moonbound.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(14) .movie-photo{
+    background: url(king-tweety.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(15) .movie-photo{
+    background: url(batman-assault-on-arkham.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(16) .movie-photo{
+    background: url(cars.png) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(17) .movie-photo{
+    background: url(asterix-the-secret-of-the-magic-portion.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(18) .movie-photo{
+    background: url(Inside_Out.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(19) .movie-photo{
+    background: url(diary-of-a-wimpy-kid-christmas-cabin-fever.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(20) .movie-photo{
+    background: url(lego-dc-shazam-magic-and-monsters.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(21) .movie-photo{
+    background: url(felix-and-the-hidden-treasure.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(22) .movie-photo{
+    background: url(heroes-of-the-golden-mask.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(23) .movie-photo{
+    background: url(xicos-journey.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(24) .movie-photo{
+    background: url(magic-arch.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(25) .movie-photo{
+    background: url(brave.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(26) .movie-photo{
+    background: url(no-time-to-spy-the-loud-house-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(27) .movie-photo{
+    background: url(just-super.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(28) .movie-photo{
+    background: url(barbie-princess-adventure.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:nth-child(29) .movie-photo{
+    background: url(fearless.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation12 ul li:last-child .movie-photo{
+    background: url(flow.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 13*/
+.animation13 ul li:first-child .movie-photo{
+    background: url(my-hero-academia-heroes-rising.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(2) .movie-photo{
+    background: url(corpse-bride.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(3) .movie-photo{
+    background: url(stardog-and-turbocat.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(4) .movie-photo{
+    background: url(blue-giant.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(5) .movie-photo{
+    background: url(two-hundred-percent-wolf.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(6) .movie-photo{
+    background: url(suicide-squad-hell-to-pay.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(7) .movie-photo{
+    background: url(crazy-birds.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(8) .movie-photo{
+    background: url(superman-red-son.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(9) .movie-photo{
+    background: url(the-boy-and-the-heron.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(10) .movie-photo{
+    background: url(ploey.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(11) .movie-photo{
+    background: url(tinkerbell-and-the-great-fairy-rescue.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(12) .movie-photo{
+    background: url(the-wishmas-tree.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(13) .movie-photo{
+    background: url(kungfu-mulan.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(14) .movie-photo{
+    background: url(troll-the-tale-of-a-tail.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(15) .movie-photo{
+    background: url(red-shoes-and-the-seven-dwarfs.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(16) .movie-photo{
+    background: url(starship-troopers-traitor-of-mars.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(17) .movie-photo{
+    background: url(shrek3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(18) .movie-photo{
+    background: url(tinkerbell-and-the-legend-of-the-neverbeast.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(19) .movie-photo{
+    background: url(the-inseparables.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(20) .movie-photo{
+    background: url(salma-big-wish.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(21) .movie-photo{
+    background: url(a-mystery-on-the-cattle-hill-ex.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(22) .movie-photo{
+    background: url(scooby-doo-and-the-curse-of-the-13th-ghost.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(23) .movie-photo{
+    background: url(muppets-haunted-mansion.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(24) .movie-photo{
+    background: url(leo.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(25) .movie-photo{
+    background: url(pets-united.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(26) .movie-photo{
+    background: url(hundred-percent-wolf.jpg.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(27) .movie-photo{
+    background: url(sheep-and-wolves2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(28) .movie-photo{
+    background: url(constantine-city-of-demons.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:nth-child(29) .movie-photo{
+    background: url(the-lego-ninjago-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation13 ul li:last-child .movie-photo{
+    background: url(mars-express.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 14*/
+.animation14 ul li:first-child .movie-photo{
+    background: url(puss-in-book-trapped-in-an-epic-tale.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(2) .movie-photo{
+    background: url(Rise_of_the_Teenage_Mutant_Ninja_Turtles-_The_Movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(3) .movie-photo{
+    background: url(hulk-vs.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(4) .movie-photo{
+    background: url(madagascar3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(5) .movie-photo{
+    background: url(rio2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(6) .movie-photo{
+    background: url(cars2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(7) .movie-photo{
+    background: url(maya-the-bee2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(8) .movie-photo{
+    background: url(monster-high-13-wishes.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(9) .movie-photo{
+    background: url(shrek2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(10) .movie-photo{
+    background: url(barbie-and-her-sister-in-a-puppy-chase.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(11) .movie-photo{
+    background: url(lego-star-wars-holiday-special.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(12) .movie-photo{
+    background: url(pokemon-detective-pikachu.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(13) .movie-photo{
+    background: url(the-spongebob-movie-sponge-out-of-water.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(14) .movie-photo{
+    background: url(norm-of-the-north-king-sized-adventure.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(15) .movie-photo{
+    background: url(storks.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(16) .movie-photo{
+    background: url(peter-rabbit2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(17) .movie-photo{
+    background: url(woodywoodpecker-goes-to-camp.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(18) .movie-photo{
+    background: url(phineas-and-ferb-the-movie-candace-against-the-universe.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(19) .movie-photo{
+    background: url(scooby-doo-and-the-gourmet-ghost.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(20) .movie-photo{
+    background: url(lego-justice-league-attack-of-the-legion-of-doom.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(21) .movie-photo{
+    background: url(hulk-where-monsters-dwell.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(22) .movie-photo{
+    background: url(steven-universe-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(23) .movie-photo{
+    background: url(monster-high-frights-camera-action.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(24) .movie-photo{
+    background: url(planes2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(25) .movie-photo{
+    background: url(free-birds.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(26) .movie-photo{
+    background: url(asterix-the-mansions-of-the-gods.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(27) .movie-photo{
+    background: url(sheep-and-wolves.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(28) .movie-photo{
+    background: url(bolt.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:nth-child(29) .movie-photo{
+    background: url(ultimate-avengers2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation14 ul li:last-child .movie-photo{
+    background: url(monster-high-freaky-fusion.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 15*/
+.animation15 ul li:first-child .movie-photo{
+    background: url(rio.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(2) .movie-photo{
+    background: url(cars3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(3) .movie-photo{
+    background: url(monster-high-scaris-city-of-frights.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(4) .movie-photo{
+    background: url(norm-of-the-north-family-vacation.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(5) .movie-photo{
+    background: url(madagascar2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(6) .movie-photo{
+    background: url(the-peanut-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(7) .movie-photo{
+    background: url(monster-high-great-scarrier-reef.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(8) .movie-photo{
+    background: url(maya-the-bee-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(9) .movie-photo{
+    background: url(lego-batman-family-matters.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(10) .movie-photo{
+    background: url(shrek.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(11) .movie-photo{
+    background: url(peter-rabbit.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(12) .movie-photo{
+    background: url(norm-of-the-north.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(13) .movie-photo{
+    background: url(scooby-doo-and-wwe-curse-of-the-speed-demon.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(14) .movie-photo{
+    background: url(hop.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(15) .movie-photo{
+    background: url(cloudy-with-a-chance-of-meatballs2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(16) .movie-photo{
+    background: url(mrpeabody-and-sherman.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(17) .movie-photo{
+    background: url(turbo.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(18) .movie-photo{
+    background: url(paranorman.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(19) .movie-photo{
+    background: url(surf-up.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(20) .movie-photo{
+    background: url(vixen-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(21) .movie-photo{
+    background: url(tangled-before-ever-after.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(22) .movie-photo{
+    background: url(marvel-superhero-adventures-frost-fight.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(23) .movie-photo{
+    background: url(the-lorax.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(24) .movie-photo{
+    background: url(alpha&omega7.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(25) .movie-photo{
+    background: url(scooby-doo-franken-creepy.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(26) .movie-photo{
+    background: url(baki-hanma-vs-kengan-ashura.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(27) .movie-photo{
+    background: url(wonder-woman-bloodlines.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(28) .movie-photo{
+    background: url(justice-league&rwby-part1.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:nth-child(29) .movie-photo{
+    background: url(madagascar.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation15 ul li:last-child .movie-photo{
+    background: url(rise-of-the-guardians.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 16*/
+.animation16 ul li:first-child .movie-photo{
+    background: url(scooby-doo-shaggys-showdown.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(2) .movie-photo{
+    background: url(monster-high-welcome-to-monster-high.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(3) .movie-photo{
+    background: url(lego-marvel-avengers-code-red.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(4) .movie-photo{
+    background: url(phineas-and-ferb-the-movie-across-the-2nd-dimension.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(5) .movie-photo{
+    background: url(cloudy-with-a-chance-of-meatballs.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(6) .movie-photo{
+    background: url(scooby-doo-stage-fright.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(7) .movie-photo{
+    background: url(tom&jerry-willy-wonka-and-the-chocolatefactory.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(8) .movie-photo{
+    background: url(strange-magic.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(9) .movie-photo{
+    background: url(the-one-and-only-ivan.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(10) .movie-photo{
+    background: url(shark-tale.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(11) .movie-photo{
+    background: url(Scooby-Doo!_WrestleMania_Mystery.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(12) .movie-photo{
+    background: url(alvin&the-chipmunks-chip-wrecked.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(13) .movie-photo{
+    background: url(batman-unlimited-animal-instincts.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(14) .movie-photo{
+    background: url(green-lantern-emerald-knights.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(15) .movie-photo{
+    background: url(tom&jerry-back-to-oz.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(16) .movie-photo{
+    background: url(the-swan-princess-a-royal-family-tale.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(17) .movie-photo{
+    background: url(scooby-doo-and-the-samurai-sword.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(18) .movie-photo{
+    background: url(the-clockwork-girl.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(19) .movie-photo{
+    background: url(penguins-of-madagascar-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(20) .movie-photo{
+    background: url(the-reef.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(21) .movie-photo{
+    background: url(wolfwalkers.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(22) .movie-photo{
+    background: url(batman-unlimited-monster-mayhem.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(23) .movie-photo{
+    background: url(yogi-bear.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(24) .movie-photo{
+    background: url(scooby-doo-and-batman-the-brave-and-the-bold.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(25) .movie-photo{
+    background: url(dc-superhero-girls-intergalactic-games.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(26) .movie-photo{
+    background: url(primal-tales-of-savagery.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(27) .movie-photo{
+    background: url(up.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(28) .movie-photo{
+    background: url(urkel-saves-santa-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:nth-child(29) .movie-photo{
+    background: url(the-legend-of-hei.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation16 ul li:last-child .movie-photo{
+    background: url(monsters-inc.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 17*/
+.animation17 ul li:first-child .movie-photo{
+    background: url(batman-the-dark-knight-returns-deluxe-edition.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(2) .movie-photo{
+    background: url(bubble.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(3) .movie-photo{
+    background: url(dc-superhero-girls-legends-of-atlantis.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(4) .movie-photo{
+    background: url(monsters-university.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(5) .movie-photo{
+    background: url(scooby-doo-mask-of-the-blue-falcon.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(6) .movie-photo{
+    background: url(the-drawn-together-movie-the-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(7) .movie-photo{
+    background: url(sinbad.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(8) .movie-photo{
+    background: url(tom&jerry-robinhood-and-his-merry-mouse.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(9) .movie-photo{
+    background: url(my-sweet-monster.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(10) .movie-photo{
+    background: url(alpha&omega3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(11) .movie-photo{
+    background: url(minions.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(12) .movie-photo{
+    background: url(ultimate-avengers.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(13) .movie-photo{
+    background: url(lego-star-wars-summer-vacation.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(14) .movie-photo{
+    background: url(legend-of-the-guardians-the-owls-of-gahoole.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(15) .movie-photo{
+    background: url(scooby-doo-camp-scare.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(16) .movie-photo{
+    background: url(the-book-of-life.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(17) .movie-photo{
+    background: url(mobile-suit-gundam-hathway.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(18) .movie-photo{
+    background: url(i-am-what-i-am.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(19) .movie-photo{
+    background: url(stopmotion.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(20) .movie-photo{
+    background: url(alpha&omega2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(21) .movie-photo{
+    background: url(dolphin-boy.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(22) .movie-photo{
+    background: url(cinderella-and-the-little-sorcerer.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(23) .movie-photo{
+    background: url(fruits-basket-prelude.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(24) .movie-photo{
+    background: url(dragon-quest-your-story.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(25) .movie-photo{
+    background: url(pinocchio.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(26) .movie-photo{
+    background: url(bad-cat.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(27) .movie-photo{
+    background: url(henchmen.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(28) .movie-photo{
+    background: url(the-seven-deadly-sins-prisoners-of-the-sky.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:nth-child(29) .movie-photo{
+    background: url(duck-duck-goose.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.animation17 ul li:last-child .movie-photo{
+    background: url(alpha&omega.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* DOWNLOAD'S PAGE*/
+.contents{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.contents .movie-information{
+    display: flex;
+    align-items: start;
+    gap: 1em;
+    width: 100%;
+}
+
+.contents .movie-information .details-of-movie{
+    width: 70%;
+    background: #000000;
+    padding: 1em 0;
+    border-radius: 15px;
+}
+
+.contents .movie-information .details-of-movie .movie-description{
+    padding: 1em;
+    line-height: 1.7em;
+}
+
+.contents .movie-information .details-of-movie > p{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 0 .5em;
+}
+
+.contents .movie-information .details-of-movie .movie-description ul li:first-child{
+    margin-bottom: 15px;
+}
+
+.contents .movie-information .details-of-movie .movie-description ul li:nth-child(5){
+    margin-bottom: 40px;
+}
+
+.contents .movie-information .details-of-movie .movie-description ul li:not(:first-child){
+    margin-top: 5px;
+}
+
+.contents .movie-information .details-of-movie .movie-description ul li:not(:first-child) .span1{
+    font-weight: 650;
+    color: #ffffff;
+}
+
+.contents .movie-information .details-of-movie .movie-description ul li:not(:first-child) .span2{
+    background: #0000ff4b;
+    padding: 0 .5em;
+    color: #aaaaaa;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.contents .movie-information .details-of-movie .movie-description ul li:not(:first-child) .span2 a{
+    color: #3542f1;
+    text-decoration: underline;
+}
+
+.contents .movie-information .details-of-movie .movie-description ul li:not(:first-child) .span2 svg{
+    color: #ffff00;
+    margin-bottom: -5px;
+    margin-right: 2px;
+}
+
+.contents .movie-information .details-of-movie .movie-description ul li:not(:first-child) span{
+    display: block;
+}
+
+.contents .movie-information .details-of-movie .movie-description ul li:not(:first-child){
+    color: #8b8b8b;
+}
+
+.contents .movie-information .photo-of-movie{ 
+    width: 30%;
+    height: 40em;
+    border-radius: 15px;
+}
+
+.margin-top{
+    margin-top: 40px;
+}
+
+#search-margin-top{
+    margin-top: 10em;
+}
+
+/* NEXT MOVIE */
+.next-movie-container{
+    padding: 0 .6em;
+}
+
+.next-movie-container ul{
+    position: relative;
+    width: 100%;
+}
+
+.next-movie-container ul li{
+    height: 100px;
+    width: 160px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: .2s ease-in;
+    gap: .6em;
+    color: #ffffff;
+}
+
+.next-movie-container ul li .movie-details{
+    display: block;
+}
+
+.next-movie-container ul li .previous,
+.next-movie-container ul li .next{
+    margin-top: -23px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.next-movie-container ul li .title{
+    font-size: 1.2em;
+    margin-top: 3px;
+}
+
+.next-movie-container .next-movie a{
+    position: relative;
+    display: flex;
+    border: 1px solid #0000af;
+    padding: 0 2em;
+    border-radius: 10px;
+}
+
+.next-movie-container .next-movie a ul{
+    display: flex;
+    justify-content: end;
+}
+
+.next-movie-container .previous-movie a{
+    position: relative;
+    display: flex;
+    border: 1px solid #0000af;
+    padding: 0 2em;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.next-movie-container ul li .movie-photo{
+    background: url(How\ _to_Train_Your_Dragon_2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* RELATED MOVIES */
+.related-movies{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    margin-top: 25px;
+}
+
+.related-movies-grid-section{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 3em;
+}
+
+.related-movies-grid-section ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    gap: 1em;
+    width: 100%;
+}
+
+.related-movies-grid-section ul li{
+    height: 400px;
+    width: 100%;
+    padding-bottom: .8em;
+    border-radius: 5px;
+    position: relative;
+    transition: .2s ease-in;
+}
+
+.related-movies-grid-section ul li .movie-details,
+.related-text{
+    color: #fff;
+}
+
+.related-text{
+    font-size: 1.3em;
+    position: relative;
+}
+
+.related-text span::before,
+.related-text span::after{
+    content: '';
+    background: #0000af;
+    height: 2px;
+    width: 150px;
+    position: absolute;
+    top: 50%;
+}
+
+.related-text span::before{
+    left: -110%;
+}
+
+.related-text span::after{
+    right: -110%;
+}
+
+/*RELATED MOVIES MOVIE PHOTO*/
+.related-movies-grid-section ul li:first-child .movie-photo{
+    background: url(How\ _to_Train_Your_Dragon_2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.related-movies-grid-section ul li:nth-child(2) .movie-photo{
+    background: url(How\ _to_Train_Your_Dragon_2.jpeg) center no-repeat;
+    background-size: cover;
+}
+.related-movies-grid-section ul li:nth-child(3) .movie-photo{
+    background: url(How\ _to_Train_Your_Dragon_2.jpeg) center no-repeat;
+    background-size: cover;
+}
+.related-movies-grid-section ul li:last-child .movie-photo{
+    background: url(How\ _to_Train_Your_Dragon_2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 1 DOWNLOAD PAGE */
+.contents .movie-information .inside-out-2{
+    background: url(inside-out2.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .despicable-me4{
+    background: url(Despicable_Me_4.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .kunfu-panda4{
+    background: url(kunfu-panda4.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .transformers-one{
+    background: url(Transformers_One.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .the-wild-robot{
+    background: url(the-wild-robot.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .spellbound{
+    background: url(spellbound.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .ultraman-rising{
+    background: url(Ultraman_Rising.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .dragonkeeper{
+    background: url(dragon-keeper.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .the-garfield-movie{
+    background: url(the-garfield-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .orion-and-the-dark{
+    background: url(Orion_and_The_Dark.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .trolls-band-together{
+    background: url(trolls-band-together.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .the-monkey-king{
+    background: url(the-monkey-king.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .paw-patrol-the-mighty-movie{
+    background: url(paw-patrol-the-mighty-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .spiderman-across-the-spider-verse{
+    background: url(spiderman-across-the-spiderverse.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .elemental{
+    background: url(elemental.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .the-super-mario-bros-movie{
+    background: url(the-super-mario-bros-movie.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .teenage-mutant-ninja-turtles-mutant-mayhem{
+    background: url(teenage-mutant-ninja-turtles-mutant-mayhem.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .the-magicians-elephant{
+    background: url(the-magicians-elephant.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .nimona{
+    background: url(nimona.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .ruby-gillman-teenage-kraken{
+    background: url(Ruby_Gillman_Teenage_Kraken.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .the-amazing-maurice{
+    background: url(the-amazing-maurice.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .my-fathers-dragon{
+    background: url(my-fathers-dragon.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .scrooge-a-christmas-carol{
+    background: url(scrooge-a-christmas-carol.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .puss-in-boots-the-last-wish{
+    background: url(puss-in-boots-the-last-wish.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .strange-world{
+    background: url(strange-world.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .wish{
+    background: url(Wish.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .mummies{
+    background: url(Mummies.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .the-bad-guys{
+    background: url(The_Bad_Guys.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .batman-and-superman-battle-of-the-supersons{
+    background: url(Batman_and_Superman_Battle_of_the_Supersons.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .inside-out{
+    background: url(Inside_Out.jpg) center no-repeat;
+    background-size: cover;
+}
+
+/* ANIMATION PAGE 2 DOWNLOAD PAGE*/
+.contents .movie-information .suzume{
+    background: url(suzume.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .chicken-run{
+    background: url(chicken-run.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .migration{
+    background: url(migration.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .turning-red{
+    background: url(turning-red.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .luck{
+    background: url(Luck.png) center no-repeat;
+    background-size: cover;
+}
+
+/* MOVIES PAGE 1 DOWNLOAD PAGE*/
+.contents .movie-information .how-to-train-your-dragon{
+    background: url(How\ _to_Train_Your_Dragon_2.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .movie-information .love-in-wolf-creek{
+    background: url(Love_In_Wolf_Creek.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.contents .download-items{
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 1em;
+}
+
+.contents .download-items button{
+    display: block;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 10px;
+    background: #040492;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+}
+
+.contents .download-items a button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.contents .download-items a button:hover,
+.contents .download-items a button:active{
+    background: #020264;
+    color: #ffffff;
+}
+
+.contents .download-items #fast-download{
+    margin: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.contents .download-items #download-vid{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+/* ENDS HERE*/
+
+/* CONTACT US/SUPPORT US */
+
+.developer-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: .5em;
+    position: relative;
+    user-select: none;
+    margin-bottom: 20px;
+}
+
+.help{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.help ul{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    position: relative;
+}
+
+.help ul li{
+    user-select: none;
+}
+
+.help ul li:nth-child(2){
+    color: #0000ff;
+}
+
+.help ul li:first-child a,
+.help ul li:last-child > span{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+.help ul li:first-child a svg,
+.help ul li:last-child svg{
+    height: 1.2em;
+}
+
+.help a{
+    color: #fff;
+}
+
+.help a:hover,
+.help a:active{
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+.help ul li:last-child > span{
+    color: #fff;
+}
+
+.help ul li:last-child{
+    cursor: pointer;
+}
+
+.help ul li:last-child:hover{
+    text-decoration: underline;
+}
+
+.contact-email{
+    background: #000000;
+    height: 100px;
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: #fff;
+    position: absolute;
+    border: 1px solid #0000ff;
+    gap: .5em;
+    transform: translate(-50%);
+    left: 50%;
+    top: -450%;
+    visibility: hidden;
+}
+
+.showing{
+    visibility: visible;
+}
+
+.contact-email .email-svg{
+    background: #ffffff;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.contact-email .email-svg:hover svg{
+    color: #0000ff;
+}
+
+.contact-email .email-svg svg{
+    color: #000000;
+}
+
+.support-us{
+    margin-top: 8em;
+}
+
+.details{
+    color: #fff;
+}
+
+.right-details{
+    text-align: center;
+}
+
+.currencies img{
+    height: 1.5em;
+}
+
+.currencies ul li:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.currencies ul li{
+    background: #00009b3b;
+    padding: .5em;
+    border-radius: 10px;
+}
+
+/* CONTACT US/SUPPORT US STYLING ENDS HERE */
+
+/* FOOTER */
+footer{
+    width: 100%;
+    border-top: 1px solid #3d3d3d;
+    text-align: center;
+    color: #8b8b8b;
+    padding: 1em;
+    font-size: 0.9em;
+    user-select: none;
+}
+
+footer img{
+    height: 1.5em;
+}
